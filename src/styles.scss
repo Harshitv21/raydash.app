@@ -46,7 +46,7 @@ html.dark { color-scheme: dark; }
       @apply font-bold;
     }
     h2 {
-      @apply text-3xl my-6;
+      @apply text-3xl my-6 scroll-mt-24;
     }
     h3 {
       @apply text-2xl my-6;
@@ -73,5 +73,5 @@ html.dark { color-scheme: dark; }
 }
 
 body {
-  @apply font-fira bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
+  @apply font-fira bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-300;
 }
