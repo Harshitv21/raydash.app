@@ -41,12 +41,6 @@ html.dark { color-scheme: dark; }
 
 /* SHARED COMPONENT STYLES & LAYOUTS (Bypasses view encapsulation) */
 @layer base {
-  body {
-    @apply font-fira;
-    background-color: var(--mat-sys-surface);
-    color: var(--mat-sys-on-surface);
-  }
-
   .shared-styles {
     h1, h2, h3 {
       @apply font-bold;
@@ -76,4 +70,8 @@ html.dark { color-scheme: dark; }
       @apply text-blue-800 dark:text-blue-300 no-underline;
     }
   }
+}
+
+body {
+  @apply font-fira bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100;
 }
