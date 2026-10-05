@@ -1,0 +1,33 @@
+@for(diagram of diagrams; track diagram.heading) {
+    <div>
+        <h2 [id]="diagram.heading.toLowerCase()">{{ diagram.heading }}</h2>
+
+        <mat-card class="example-card" appearance="outlined" ngsImageViewer> 
+            <mat-card-header>
+            <div mat-card-avatar class="thinking"></div>
+            <mat-card-title>{{ diagram.cardTitle }}</mat-card-title>
+            </mat-card-header>
+
+            <img 
+                mat-card-image 
+                [sourceUrl]="diagram.assetSrc" 
+                [src]="diagram.assetSrc" 
+                [alt]="diagram.cardTitle" ngsImageViewerPicture 
+            />
+            
+            <mat-card-content>
+            <p></p>
+            </mat-card-content>
+            
+            <mat-card-actions>
+            <a 
+                mat-raised-button 
+                [href]="diagram.githubLink" 
+                target="_blank"
+            >
+                Github
+            </a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+}

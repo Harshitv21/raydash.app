@@ -1,0 +1,13 @@
+<div id="clients-container">
+    <h2 id="clients">Clients</h2>
+
+    @for (client of clients; track client.clientName) {    
+        <h3>{{ client.clientName }}</h3>
+        
+        <ul>
+        @for(link of client.links; track $index) {
+                <li><a [href]="link.link" target="_blank">{{ link.linkTitle }}</a></li>
+            }
+        </ul>
+    }
+</div>

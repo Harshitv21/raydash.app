@@ -1,0 +1,79 @@
+/* CORE IMPORTS & CONFIGURATION (Tailwind & Material UI) */ 
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
+
+@layer theme, base, material, components, utilities;
+@import "tailwindcss";
+
+/* dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+html { color-scheme: light; }
+html.dark { color-scheme: dark; }
+
+@import "@angular/material/prebuilt-themes/azure-blue.css" layer(material);
+
+@theme {
+  --font-fira: "Fira Code", monospace;
+}
+
+/* GLOBAL TYPOGRAPHY (Maps Angular Material tokens to your font) */
+:root {
+  --mat-sys-body-large-font: var(--font-fira);
+  --mat-sys-body-medium-font: var(--font-fira);
+  --mat-sys-body-small-font: var(--font-fira);
+  
+  --mat-sys-label-large-font: var(--font-fira);
+  --mat-sys-label-medium-font: var(--font-fira);
+  --mat-sys-label-small-font: var(--font-fira);
+  
+  --mat-sys-title-large-font: var(--font-fira);
+  --mat-sys-title-medium-font: var(--font-fira);
+  --mat-sys-title-small-font: var(--font-fira);
+  
+  --mat-sys-headline-large-font: var(--font-fira);
+  --mat-sys-headline-medium-font: var(--font-fira);
+  --mat-sys-headline-small-font: var(--font-fira);
+
+  --mat-sys-display-large-font: var(--font-fira);
+  --mat-sys-display-medium-font: var(--font-fira);
+  --mat-sys-display-small-font: var(--font-fira);
+}
+
+/* SHARED COMPONENT STYLES & LAYOUTS (Bypasses view encapsulation) */
+@layer base {
+  body {
+    @apply font-fira;
+    background-color: var(--mat-sys-surface);
+    color: var(--mat-sys-on-surface);
+  }
+
+  .shared-styles {
+    h1, h2, h3 {
+      @apply font-bold;
+    }
+    h2 {
+      @apply text-3xl my-6;
+    }
+    h3 {
+      @apply text-2xl my-6;
+    }
+    a:hover {
+      @apply text-blue-800 no-underline;
+    }
+    ul {
+      @apply list-disc list-inside;
+    }
+  }
+}
+
+@layer components {
+  #description-container a,
+  #clients-container a,
+  #links-container a {
+    @apply text-blue-600 dark:text-blue-400 underline transition-colors duration-200;
+
+    &:hover {
+      @apply text-blue-800 dark:text-blue-300 no-underline;
+    }
+  }
+}
