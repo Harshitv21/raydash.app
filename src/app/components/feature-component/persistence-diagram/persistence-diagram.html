@@ -1,0 +1,29 @@
+<div>
+    <mat-card class="example-card" appearance="outlined" ngsImageViewer> 
+        <mat-card-header>
+        <div mat-card-avatar class="thinking"></div>
+        <mat-card-title>{{ persistenceDiagramData.cardTitle }}</mat-card-title>
+        </mat-card-header>
+
+        <img 
+            mat-card-image 
+            [sourceUrl]="persistenceDiagramData.assetSrc" 
+            [src]="persistenceDiagramData.assetSrc" 
+            [alt]="persistenceDiagramData.cardTitle" ngsImageViewerPicture 
+        />
+        
+        <mat-card-content>
+        <p></p>
+        </mat-card-content>
+        
+        <mat-card-actions>
+        <a 
+            mat-raised-button 
+            [href]="persistenceDiagramData.githubLink" 
+            target="_blank"
+        >
+            Github
+        </a>
+        </mat-card-actions>
+    </mat-card>
+</div>

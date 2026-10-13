@@ -1,11 +1,25 @@
 <!doctype html>
-<html lang="en" scroll-smooth>
+<html lang="en" class="motion-safe:scroll-smooth">
 <head>
   <meta charset="utf-8">
-  <title>Raydash</title>
+  <title>Raydash: a self-hosted, binary safe TCP cache</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/svg+xml" href="./assets/server.svg">
+  <meta name="description" content="Raydash is a self-hosted Redis-style key-value cache written in Go, with a binary safe TCP protocol, optional AUTH, optional Postgres persistence and drop-in client support.">
+  <link rel="canonical" href="https://raydash.app/">
+  <link rel="icon" type="image/svg+xml" href="/assets/server.svg">
+
+  <!-- Open Graph: what LinkedIn, Slack, Discord etc. read to build the link preview. -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Raydash">
+  <meta property="og:title" content="Raydash: a self-hosted, binary safe TCP cache">
+  <meta property="og:description" content="A Redis-style key-value cache in Go with a binary safe protocol, optional AUTH, optional Postgres persistence and and drop-in client support.">
+  <meta property="og:url" content="https://raydash.app/">
+  <meta property="og:image" content="https://raydash.app/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Raydash: a self-hosted, binary safe TCP cache">
+  <meta name="twitter:card" content="summary_large_image">
 
   <script>
     (function () {

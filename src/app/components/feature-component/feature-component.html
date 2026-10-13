@@ -1,8 +1,30 @@
-<div>
-    <h2 id="features">Features</h2>
-    <ul>
-        @for(feature of features; track feature) {
-            <li>{{ feature }}</li>
+<div id="features-container">
+  <h2 id="features">Features</h2>
+
+  <div class="grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+    @for (feature of features(); track feature.title) {
+      <section class="min-w-0" [class]="feature.wide ? 'lg:col-span-2' : ''">
+        <h3 class="mb-3 mt-0 text-xl">{{ feature.title }}</h3>
+
+        @if (feature.terminal; as t) {
+          <terminal-component [steps]="t.steps" [title]="t.title" [prompt]="t.prompt ?? '>'" />
         }
-    </ul>
+
+        @if (feature.diagram; as d) {
+          <diagram-card-component [diagram]="d" />
+        }
+
+        @if (feature.link; as l) {
+          <mat-card appearance="outlined">
+            <mat-card-content>
+              <p class="mt-4">{{ l.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+              <a mat-stroked-button [href]="l.href">{{ l.linkText }}</a>
+            </mat-card-actions>
+          </mat-card>
+        }
+      </section>
+    }
+  </div>
 </div>

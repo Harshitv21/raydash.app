@@ -1,4 +1,4 @@
-/* CORE IMPORTS & CONFIGURATION (Tailwind & Material UI) */ 
+/* CORE IMPORTS & CONFIGURATION (Tailwind & Material UI) */
 @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap');
 
 @layer theme, base, material, components, utilities;
@@ -74,4 +74,28 @@ html.dark { color-scheme: dark; }
 
 body {
   @apply font-fira bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-300;
+}
+
+
+/* DARK MODE FOR ANGULAR MATERIAL */
+html.dark {
+  /* system tokens (what most material components fall back to) */
+  --mat-sys-surface: #171717;               /* neutral-900: card + toolbar background */
+  --mat-sys-surface-container: #1f1f1f;     /* menus, e.g. the hamburger dropdown */
+  --mat-sys-on-surface: #f5f5f5;            /* neutral-100: main text */
+  --mat-sys-on-surface-variant: #a3a3a3;    /* neutral-400: secondary text */
+  --mat-sys-outline-variant: #404040;       /* neutral-700: borders and dividers */
+  --mat-sys-primary: #8ab4f8;               /* a blue that is readable on dark */
+
+  /* component tokens (belt and braces, in case the theme baked values in) */
+  --mat-card-outlined-container-color: #171717;
+  --mat-card-outlined-outline-color: #404040;
+  --mat-card-title-text-color: #f5f5f5;
+  --mat-card-subtitle-text-color: #a3a3a3;
+  --mat-toolbar-container-background-color: #171717;
+  --mat-toolbar-container-text-color: #f5f5f5;
+  --mat-menu-container-color: #1f1f1f;
+  --mat-menu-item-label-text-color: #f5f5f5;
+  --mat-button-protected-container-color: #262626;
+  --mat-button-protected-label-text-color: #8ab4f8;
 }

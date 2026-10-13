@@ -2,8 +2,13 @@
   <!-- Heading -->
   <h1 class="text-5xl md:text-7xl text-center">Raydash</h1>
 
+  <p class="text-xl md:text-2xl mt-2 text-center">A self-hosted, binary safe TCP cache with a drop-in client support</p>
+
   <!-- Navbar -->
   <navbar-component [navbarItems]="raydashData.navbarItems"></navbar-component>  
+
+  <!-- Feature list -->
+  <feature-component [features]="raydashData.features" />
 
   <!-- Description -->
   <div id="description-container">
@@ -26,9 +31,6 @@
         perfectly for simple use cases AND it's a really great project for diving into advanced backend concepts~!    
     </p>
   </div>
-
-  <!-- Feature list -->
-  <feature-component [features]="raydashData.raydashFeatures" />
 
   <!-- Diagrams -->
   <diagram-component [diagrams]="raydashData.diagrams"></diagram-component>

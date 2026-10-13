@@ -1,0 +1,19 @@
+<mat-card appearance="outlined" ngsImageViewer>
+  <mat-card-header>
+    <img mat-card-avatar class="object-cover" src="/assets/thinking.jpg" alt="" />
+    <mat-card-title>{{ diagram().cardTitle }}</mat-card-title>
+  </mat-card-header>
+
+  <img
+    mat-card-image
+    [sourceUrl]="diagram().assetSrc"
+    [src]="diagram().assetSrc"
+    [alt]="diagram().alt"
+    loading="lazy"
+    ngsImageViewerPicture
+  />
+
+  <mat-card-actions>
+    <a mat-raised-button [href]="diagram().githubLink" target="_blank" rel="noopener">Github</a>
+  </mat-card-actions>
+</mat-card>

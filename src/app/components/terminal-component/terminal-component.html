@@ -1,0 +1,53 @@
+<!-- THE WINDOW -->
+<div class="overflow-hidden rounded-xl border border-zinc-700 bg-zinc-950 shadow-lg">
+
+  <!-- TITLE BAR -->
+  <div class="flex items-center gap-2 border-b border-zinc-800 bg-zinc-900 px-4 py-2.5">
+    <span class="size-3 rounded-full bg-red-500"></span>
+    <span class="size-3 rounded-full bg-yellow-400"></span>
+    <span class="size-3 rounded-full bg-green-500"></span>
+
+    <span class="ml-2 truncate text-xs text-zinc-400">{{ title() }}</span>
+
+    @if (finished()) {
+      <button
+        type="button"
+        (click)="play()"
+        class="ml-auto shrink-0 rounded px-2 py-0.5 text-xs text-zinc-400 hover:bg-zinc-800 hover:text-zinc-100"
+      >
+        ↻ replay
+      </button>
+    }
+  </div>
+
+  <!-- BODY -->
+  <div class="overflow-x-auto px-4 py-3 font-fira text-sm text-zinc-200">
+
+    <div [style.min-height.rem]="minHeightRem()">
+
+      <!-- PRINTED LINES -->
+      @for (line of printed(); track $index) {
+        <div class="min-h-6 whitespace-pre leading-6">
+          @if (line.type === 'command') {
+            <span class="mr-2 select-none text-emerald-400">{{ prompt() }}</span>
+            <span>{{ line.text }}</span>
+          } @else {
+            <span
+              [class.text-emerald-400]="line.tone === 'ok'"
+              [class.text-red-400]="line.tone === 'error'"
+              [class.text-zinc-500]="line.tone === 'muted'"
+              >{{ line.text }}</span
+            >
+          }
+        </div>
+      }
+
+      <!-- LIVE LINE -->
+      <div class="min-h-6 whitespace-pre leading-6">
+        <span class="mr-2 select-none text-emerald-400">{{ prompt() }}</span>
+        <span>{{ typing() }}</span>
+        <span class="ml-0.5 inline-block h-4 w-2 bg-zinc-300 align-middle motion-safe:animate-pulse"></span>
+      </div>
+    </div>
+  </div>
+</div>
